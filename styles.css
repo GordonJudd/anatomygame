@@ -14,7 +14,11 @@ body {
     font-size: 4em;
 }
 
-/* .grid {
+.elevation {
+    background: white;
+}
+
+.grid {
     max-width: 960px;
     margin: 0 auto;
     display: flex;
@@ -31,4 +35,4 @@ body {
     height: 150px;
     width: 150px;
 }
- */
+
