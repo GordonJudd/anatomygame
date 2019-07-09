@@ -10,18 +10,19 @@ const cardsArray = [
     },
     {
     name: 'elevation',
-    img: 'images/elevationans.png',
+    img: 'images/elevationAns.png',
     },
     {
     name: 'depression',
     img: 'images/depression.png',
     },
     {
-        name: 'depression',
-        img: 'images/depressionans.png',
-        },
+    name: 'depression',
+    img: 'images/depressionAns.png',
+    },
 
 ]
+
 
 
 
@@ -55,24 +56,6 @@ cardsArray.forEach(item => {
     grid.appendChild(card)
   })
 
-  // For each item in the gameGrid array...
-gameGrid.forEach(item => {
-    // Create card element with the name dataset
-  const card = document.createElement('div')
-  card.classList.add('card')
-  card.dataset.name = item.name
+// let gameGrid = cardsArray.concat(cardsArray)
 
-  // Create front of card
-  const front = document.createElement('div')
-  front.classList.add('front')
-
-  // Create back of card, which contains
-  const back = document.createElement('div')
-  back.classList.add('back')
-  back.style.backgroundImage = `url(${item.img})`
-
-  // Append card to grid, and front and back to each card
-  grid.appendChild(card)
-  card.appendChild(front)
-  card.appendChild(back)
-})
+  cardsArray.sort(() => 0.5 - Math.random())
