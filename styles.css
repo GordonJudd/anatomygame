@@ -6,12 +6,25 @@
 
 body {
     margin: 20px 0;
-    background: lightgrey;
+    background: lightskyblue;
 }
 
 .header-main {
     text-align: center;
     font-size: 4em;
+    margin-bottom: 0; 
+}
+
+p {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0;  
+}
+
+footer {
+    padding-top: 40px;
+    text-align: center; 
+
 }
 
 .elevation {
@@ -27,13 +40,46 @@ body {
 }
 
 .card {
+    position: relative;
+    transition: all 0.4s linear;
+    transform-style: preserve-3d;
     margin: 5px;
-    background: rgb(rgb(175, 211, 202));
+}
+  
+  .card,
+  .back,
+  .front {
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+  }
+  
+  .back,
+  .front {
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  .front {
+    background: url('images/back.jpg') no-repeat center / cover;
+  }
+
+  .back {
+    transform: rotateY(180deg);
+    background-color: white;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 150px;
-    width: 150px;
-    border: 2px solid black;
-}
+  }
 
+.selected {
+    transform: rotateY(180deg);
+  }
+
+  .match {
+    background-image: none !important;
+  }
+
+  .match .front {
+    background: lightskyblue !important;
+  }

@@ -1,4 +1,10 @@
 
+// Variables
+let firstGuess = ''
+let secondGuess = ''
+let count = 0
+let previousTarget = null
+let delay = 2000
 
 
 // Card data
@@ -6,23 +12,24 @@
 const cardsArray = [
     {
     name: 'elevation',
-    img: 'images/elevation.png',
+    img: 'images/scapula/elevation.png',
     },
     {
     name: 'elevation',
-    img: 'images/elevationAns.png',
+    img: 'images/scapula/elevationAns.png',
     },
     {
     name: 'depression',
-    img: 'images/depression.png',
+    img: 'images/scapula/depression.png',
     },
     {
     name: 'depression',
-    img: 'images/depressionAns.png',
+    img: 'images/scapula/depressionAns.png',
     },
 
 ]
 
+cardsArray.sort(() => 0.5 - Math.random())
 
 
 
@@ -49,13 +56,79 @@ cardsArray.forEach(item => {
     // Set the data-name attribute of the div to the cardsArray name
     card.dataset.name = item.name
   
-    // Apply the background image of the div to the cardsArray image
-    card.style.backgroundImage = `url(${item.img})`
-  
-    // Append the div to the grid section
+    // Create front of card
+    const front = document.createElement('div')
+    front.classList.add('front')
+
+    // Create back of card, which contains
+    const back = document.createElement('div')
+    back.classList.add('back')
+    back.style.backgroundImage = `url(${item.img})`
+
+    // Append card to grid, and front and back to each card
     grid.appendChild(card)
+    card.appendChild(front)
+    card.appendChild(back)
   })
 
-// let gameGrid = cardsArray.concat(cardsArray)
+ 
 
-  cardsArray.sort(() => 0.5 - Math.random())
+  const resetGuesses = () => {
+    firstGuess = ''
+    secondGuess = ''
+    count = 0
+    previousTarget = null
+  
+    var selected = document.querySelectorAll('.selected')
+    selected.forEach(card => {
+      card.classList.remove('selected')
+    })
+  }
+
+  // Add event listener to grid
+grid.addEventListener('click', function(event) {
+  // The event target is our clicked item
+  let clicked = event.target
+
+  // Do not allow the grid section itself to be selected; only select divs inside the grid
+  if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('selected')) {
+    return
+  }
+
+  // Add selected class\
+  if (count < 2) {
+    count++
+    if (count === 1) {
+      // Assign first guess
+      firstGuess = clicked.parentNode.dataset.name
+      clicked.parentNode.classList.add('selected')
+    } else {
+      // Assign second guess
+      secondGuess = clicked.parentNode.dataset.name
+      clicked.parentNode.classList.add('selected')
+    }
+    // If both guesses are not empty...
+    if (firstGuess !== '' && secondGuess !== '') {
+      // and the first guess matches the second match...
+      if (firstGuess === secondGuess) {
+        // run the match function
+        setTimeout(match, delay)
+        setTimeout(resetGuesses, delay)
+      } else {
+        setTimeout(resetGuesses,delay)
+      }
+    }
+     // Set previous target to clicked
+  previousTarget = clicked;
+  }
+})
+
+// Add match CSS
+const match = () => {
+  var selected = document.querySelectorAll('.selected')
+  selected.forEach(card => {
+    card.classList.add('match')
+  })
+}
+
+
