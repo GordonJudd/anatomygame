@@ -26,7 +26,34 @@ const cardsArray = [
     name: 'depression',
     img: 'images/scapula/depressionAns.png',
     },
-
+    {
+    name: 'abduction',
+    img: 'images/scapula/abduction.png',
+    },
+    {
+    name: 'abduction',
+    img: 'images/scapula/abductionAns.png',
+    },
+    {
+    name: 'adduction',
+    img: 'images/scapula/adductionAns.png',
+    },
+    {
+    name: 'upward',
+    img: 'images/scapula/upward.png',
+    },
+    {
+    name: 'upward',
+    img: 'images/scapula/upwardAns.png',
+    },
+    {
+    name: 'downward',
+    img: 'images/scapula/downward.png',
+    },
+    {
+    name: 'downward',
+    img: 'images/scapula/downwardAns.png',
+    },
 ]
 
 cardsArray.sort(() => 0.5 - Math.random())
