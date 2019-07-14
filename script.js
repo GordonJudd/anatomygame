@@ -36,6 +36,10 @@ const cardsArray = [
     },
     {
     name: 'adduction',
+    img: 'images/scapula/adduction.png',
+    },
+    {
+    name: 'adduction',
     img: 'images/scapula/adductionAns.png',
     },
     {
