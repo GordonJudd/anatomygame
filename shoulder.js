@@ -66,6 +66,14 @@ const cardsArray = [
     name: 'miRotation',
     img: 'images/shoulder/miRotationAns.png',
     },
+    {
+    name: 'joker',
+    img: 'images/joker.png',
+    },
+    {
+    name: 'joker',
+    img: 'images/joker.png',
+    },
 ]
 
 cardsArray.sort(() => 0.5 - Math.random())
@@ -97,7 +105,7 @@ cardsArray.forEach(item => {
   
     // Create front of card
     const front = document.createElement('div')
-    front.classList.add('front')
+    front.classList.add('front1')
 
     // Create back of card, which contains
     const back = document.createElement('div')

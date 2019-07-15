@@ -5,8 +5,9 @@
 }
 
 body {
-    margin: 20px 0;
+    margin: 20px auto;
     background: lightskyblue;
+    max-width: 796px;
 }
 
 .header-main {
@@ -48,20 +49,26 @@ footer {
   
   .card,
   .back,
-  .front {
+  .front,
+  .front1 {
     height: 150px;
     width: 150px;
     border-radius: 10px;
   }
   
   .back,
-  .front {
+  .front,
+  .front1 {
     position: absolute;
     backface-visibility: hidden;
   }
 
   .front {
     background: url('images/back.jpg') no-repeat center / cover;
+  }
+
+  .front1 {
+    background: url('images/back1.jpg') no-repeat bottom / cover;
   }
 
   .back {
@@ -80,22 +87,28 @@ footer {
     background-image: none !important;
   }
 
-  .match .front {
+  .match .front,
+  .match .front1 {
     background: lightskyblue !important;
   }
 
   /* Picture classes */
-
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
   .cell {
     margin: 0 10px;
     width: 150px;
   }
 
   img {
-      height: 200px;
-      width: 150px;
+      height: 80%;
+      width: 100%;
       border-radius: 10px;
   }
+
+
 
   h3 {
     text-align: center;
