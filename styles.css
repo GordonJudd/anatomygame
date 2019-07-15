@@ -83,3 +83,10 @@ footer {
   .match .front {
     background: lightskyblue !important;
   }
+
+  /* Picture classes */
+
+  .scapula {
+      height: 200px;
+      width: 150px;
+  }
