@@ -1,5 +1,5 @@
 
-// Variables
+// Variables for game
 let firstGuess = ''
 let secondGuess = ''
 let count = 0
