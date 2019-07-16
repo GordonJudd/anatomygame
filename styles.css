@@ -10,12 +10,6 @@ body {
     max-width: 796px;
 }
 
-.header-main {
-    text-align: center;
-    font-size: 4em;
-    margin-bottom: 0; 
-}
-
 p {
     text-align: center;
     font-size: 2em;
@@ -28,6 +22,18 @@ footer {
 
 }
 
+img {
+  height: 80%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+h3 {
+text-align: center;
+margin-bottom: 0;
+}
+
+/* ====Classes==== */
 .elevation {
     background: white;
 }
@@ -47,70 +53,57 @@ footer {
     margin: 5px;
 }
   
-  .card,
-  .back,
-  .front,
-  .front1 {
+.card,
+.back,
+.front,
+.front1 {
     height: 150px;
     width: 150px;
     border-radius: 10px;
-  }
+}
   
-  .back,
-  .front,
-  .front1 {
+.back,
+.front,
+.front1 {
     position: absolute;
     backface-visibility: hidden;
-  }
+}
 
-  .front {
+.front {
     background: url('images/back.jpg') no-repeat center / cover;
-  }
+}
 
-  .front1 {
+.front1 {
     background: url('images/back1.jpg') no-repeat bottom / cover;
-  }
+}
 
-  .back {
+.back {
     transform: rotateY(180deg);
     background-color: white;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-  }
+}
 
 .selected {
     transform: rotateY(180deg);
-  }
+}
 
-  .match {
+.match {
     background-image: none !important;
-  }
+}
 
-  .match .front,
-  .match .front1 {
+.match .front,
+.match .front1 {
     background: lightskyblue !important;
-  }
+}
 
-  /* Picture classes */
 .wrapper {
   display: flex;
   justify-content: space-around;
 }
-  .cell {
+ 
+.cell {
     margin: 0 10px;
     width: 150px;
-  }
-
-  img {
-      height: 80%;
-      width: 100%;
-      border-radius: 10px;
-  }
-
-
-
-  h3 {
-    text-align: center;
-    margin-bottom: 0;
-  }
+}
