@@ -109,7 +109,4 @@ const match = () => {
   })
 }
 
-if (match => 4) {
-    
-}
 // Add a celebration

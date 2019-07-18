@@ -38,6 +38,10 @@ margin-bottom: 0;
     background: white;
 }
 
+.header-main {
+    text-align: center;
+}
+
 .grid {
     max-width: 960px;
     margin: 0 auto;
