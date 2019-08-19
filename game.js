@@ -4,7 +4,7 @@ let secondGuess = ''
 let count = 0
 let previousTarget = null
 let delay = 2000
-
+let guessCounter = 0; 
 
 cardsArray.sort(() => 0.5 - Math.random())
 
@@ -105,8 +105,13 @@ const match = () => {
   var selected = document.querySelectorAll('.selected')
   selected.forEach(card => {
     card.classList.add('match')
-    console.log (count) 
-  })
+    
+    })
+    guessCounter += 1;
+    console.log ('Score equals' + " " + guessCounter)
+    if (guessCounter == 6) { 
+      setTimeout(function(){ 
+        alert('Congratulations on completing this Game!'); }, );
+        document.location.reload();
+      }
 }
-
-// Add a celebration
