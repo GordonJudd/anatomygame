@@ -6,7 +6,8 @@
 
 body {
     margin: 20px auto;
-    background: lightskyblue;
+    background: url(images/IMG_6696.JPG);
+    background-size: cover;
     max-width: 796px;
 }
 
