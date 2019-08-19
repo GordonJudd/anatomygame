@@ -99,19 +99,3 @@ grid.addEventListener('click', function(event) {
   previousTarget = clicked;
   }
 })
-
-// Add match CSS
-const match = () => {
-  var selected = document.querySelectorAll('.selected')
-  selected.forEach(card => {
-    card.classList.add('match')
-    
-    })
-    guessCounter += 1;
-    console.log ('Score equals' + " " + guessCounter)
-    if (guessCounter == 6) { 
-      setTimeout(function(){ 
-        alert('Congratulations on completing this Game!'); }, );
-        document.location.reload();
-      }
-}
